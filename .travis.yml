@@ -6,7 +6,7 @@ services:
 before_install:
   - docker build -t marcelotozzi/docker-react -f Dockerfile.dev .
 
-script: marcelotozzi
+script:
   - docker run -e CI=true marcelotozzi/docker-react npm run test
 
 deploy:
