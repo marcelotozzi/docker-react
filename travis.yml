@@ -1,0 +1,10 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t marcelotozzi/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run marcelotozzi/docker-react npm run test -- --coverage
